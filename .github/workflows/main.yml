@@ -12,9 +12,9 @@ jobs:
         exclude:
         - os: ubuntu-16.04
           node: 6
-        include:
-        - os: macos-latest
-          node: 10
+            #         include:
+            #         - os: macos-latest
+            #           node: 10
 
     runs-on: ${{ matrix.os }}
       
