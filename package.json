@@ -3,13 +3,18 @@
  "version": "1.0.0",
  "description": "",
  "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node index.js",
+  "test": "jest"
  },
  "keywords": [],
- "author": "David Neal (https://reverentgeek.com)",
+ "author": "Alliedium devOps",
  "license": "MIT",
  "dependencies": {
   "boxen": "4.0",
-  "chalk": "2.4"
+  "chalk": "2.4",
+  "jest": "^26.6.3"
+ },
+ "jest": {
+  "testRegex": ".*/*\\.test.js$"
  }
 }
