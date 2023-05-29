@@ -9,10 +9,10 @@ jobs:
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04]
         node: [6, 8, 10]
-      exclude:
+        exclude:
         - os: ubuntu-16.04
           node: 6
-      include:
+        include:
         - os: macos-latest
           node: 10
 
