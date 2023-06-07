@@ -14,7 +14,7 @@ jobs:
           node: 12
           
     runs-on: ${{ matrix.os }}
-    #runs-on: self-hosted
+    #runs-on: self-hosted 
     container: ubuntu:18.04      
     steps:
       - uses: actions/checkout@v2
