@@ -12,8 +12,7 @@ jobs:
         exclude:
         - os: ubuntu-18.04
           node: 12
-          
-    #runs-on: ${{ matrix.os }} 1
+
     runs-on: self-hosted 
     container: ${{ matrix.os }}   
     steps:
