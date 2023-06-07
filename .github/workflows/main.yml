@@ -7,15 +7,15 @@ jobs:
   my-job:
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04]
+        os: [18.04, 20.04]
         node: [12, 14, 16]
         exclude:
-        - os: ubuntu-18.04
+        - os: 18.04
           node: 12
           
-#    runs-on: ${{ matrix.os }}
-    runs-on: [ self-hosted, Linux ]
-    #container: ubuntu:18.04      
+    #runs-on: ${{ matrix.os }}
+    runs-on: [self-hosted, linux ]
+    container: ubuntu:${{ matrix.os }}      
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js
@@ -31,3 +31,4 @@ jobs:
         
       - name: Run tests
         run: npm test
+
