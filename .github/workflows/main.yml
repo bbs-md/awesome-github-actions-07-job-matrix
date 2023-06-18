@@ -16,7 +16,7 @@ jobs:
         - os: ubuntu-18.04
           node: 12
 
-    if: ${{ contains($MY_RUNNERS, 'ret1') }}
+    if: contains($MY_RUNNERS, 'ret1')
     runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
     steps:
       - uses: actions/checkout@v2
