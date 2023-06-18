@@ -28,7 +28,7 @@ jobs:
         run: echo "$MY_VAR"
         
       - name: Check IF MY_VAR
-        if: ${{ contains($MY_VAR, "ret") }}
+        if: ${{ contains(env.MY_VAR, 'ret') }}
         run: echo "THIS TEST for RET - >>>> $MY_VAR"
         
       - name: Print OS-release
