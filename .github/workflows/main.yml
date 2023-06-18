@@ -22,7 +22,13 @@ jobs:
           node-version: ${{ matrix.node }}
           
       - name: Print OS-release
-        run: cat /etc/os-release && cat ${{ runner.name }} && cat ${{ runner.os }}
+        run: cat /etc/os-release
+        
+      - name: Print runner-name
+        run: cat ${{ runner.name }}
+        
+      - name: Print runner-os
+        run: cat ${{ runner.os }}
         
         
       - name: Install dependencies
