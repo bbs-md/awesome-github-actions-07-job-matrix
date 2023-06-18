@@ -49,6 +49,12 @@ jobs:
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
         run: echo '$STEPS_CONTEXT'
+        
+      - name: Vars context
+        env:
+          VARS_CONTEXT: ${{ toJson(vars) }}
+        run: echo '$VARS_CONTEXT'
+        
       - name: Install dependencies
         run: npm ci
         
