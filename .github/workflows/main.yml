@@ -4,7 +4,7 @@ on:
   push:
   
 env:
-  MY_RUNNERS: ("ubuntu-18.04")
+  MY_RUNNERS: "ubuntu-18.04"
   
 jobs:
   my-job:
@@ -18,7 +18,7 @@ jobs:
     env:
       MATRIX_OS: "${{ matrix.os }}"
       
-    if: contains(github.env.MY_RUNNERS, 'ewr')
+    if: contains(github.env.MY_RUNNERS, github.env.MATRIX_OS)
     runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
     steps:
       - uses: actions/checkout@v2
