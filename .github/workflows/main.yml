@@ -18,7 +18,7 @@ jobs:
     env:
       Greeting: "${{ matrix.os }}"
       
-    if: contains(github.env.MY_RUNNERS, "${{ matrix.os }}")
+  #  if: contains(github.env.MY_RUNNERS, "${{ matrix.os }}")
     runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
     steps:
       - uses: actions/checkout@v2
