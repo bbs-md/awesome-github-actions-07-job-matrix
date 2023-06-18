@@ -15,7 +15,9 @@ jobs:
         exclude:
         - os: ubuntu-18.04
           node: 12
-
+    env:
+      Greeting: "${{ matrix.os }}"
+      
     if: contains(github.env.MY_RUNNERS, "${{ matrix.os }}")
     runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
     steps:
