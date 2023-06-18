@@ -4,7 +4,7 @@ on:
   push:
   
 env:
-  MY_VAR: ("Monday" "ret")
+  MY_RUNNERS: ("ubuntu-18.04")
   
 jobs:
   my-job:
@@ -16,6 +16,7 @@ jobs:
         - os: ubuntu-18.04
           node: 12
 
+    if: ${{ contains(env.MY_RUNNERS, "${{ matrix.os }}") }}
     runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +29,7 @@ jobs:
         run: echo "$MY_VAR"
         
       - name: Check IF MY_VAR
-        if: ${{ contains(env.MY_VAR, 'ret1') }}
+        if: ${{ contains(env.MY_RUNNERS, 'ret1') }}
         run: echo "THIS TEST for RET - >>>> $MY_VAR"
         
       - name: Print OS-release
