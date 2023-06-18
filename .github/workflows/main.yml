@@ -3,6 +3,9 @@ name: job-matrix
 on:
   push:
   
+env:
+  MY_VAR: ("Monday" "ret")
+  
 jobs:
   my-job:
     strategy:
@@ -21,6 +24,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           
+      - name: Print MY_VAR
+        run: echo "$MY_VAR"
+        
       - name: Print OS-release
         run: cat /etc/os-release
         
