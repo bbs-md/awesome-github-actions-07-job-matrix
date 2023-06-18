@@ -31,6 +31,9 @@ jobs:
         
       - name: Print runner-os
         run: echo ${{ runner.os }} && echo ${{ runner.labels }}
+      
+      - name: print RUNNER
+        run: echo ${{ vars.RUNNER }}
         
       - name: Dump runner context
         env:
