@@ -27,6 +27,10 @@ jobs:
       - name: Print MY_VAR
         run: echo "$MY_VAR"
         
+      - name: Check IF MY_VAR
+        if: ${{(contains(env.MY_VAR, "ret"))}}
+        run: echo "THIS TEST for RET - >>>> $MY_VAR"
+        
       - name: Print OS-release
         run: cat /etc/os-release
         
