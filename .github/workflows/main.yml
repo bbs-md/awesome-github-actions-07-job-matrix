@@ -16,7 +16,7 @@ jobs:
         - os: ubuntu-18.04
           node: 12
     env:
-      Greeting: "${{ matrix.os }}"
+      MATRIX_OS: "${{ matrix.os }}"
       
   #  if: contains(github.env.MY_RUNNERS, "${{ matrix.os }}")
     runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           
+      - name: Print MATRIX_OS
+        run: echo "$MATRIX_OS"
+        
       - name: Print MY_VAR
         run: echo "$MY_VAR"
         
