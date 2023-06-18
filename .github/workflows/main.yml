@@ -32,6 +32,10 @@ jobs:
       - name: Print runner-os
         run: echo ${{ runner.os }} && echo ${{ runner.labels }}
         
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo '$RUNNER_CONTEXT'
         
       - name: Install dependencies
         run: npm ci
