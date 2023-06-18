@@ -25,10 +25,10 @@ jobs:
         run: cat /etc/os-release
         
       - name: Print runner-name
-        run: echo ${{ runner.name }}
+        run: echo ${{ runner.name }} && echo ${{ runner }}
         
       - name: Print runner-os
-        run: echo ${{ runner.os }}
+        run: echo ${{ runner.os }} && echo ${{ runner.label }}
         
         
       - name: Install dependencies
