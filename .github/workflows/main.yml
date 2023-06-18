@@ -47,9 +47,7 @@ jobs:
         run: echo ${{ vars.RUNNER }}
         
       - name: Dump JOBS context
-        env:
-          JOBS_CONTEXT: ${{ toJson(jobs) }}
-        run: echo '$JOBS_CONTEXT'
+        run: echo '${{ jobs.my-job.strategy.matrix.os }}'
         
       - name: Dump runner context
         env:
