@@ -4,7 +4,7 @@ on:
   push:
   
 env:
-  MY_RUNNERS: "ubuntu-18.04"
+  MY_RUNNERS: ("ubuntu-18.04" "ubuntu-22.04")
   
 jobs:
   my-job:
