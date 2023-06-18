@@ -28,7 +28,7 @@ jobs:
         run: echo ${{ runner.name }} && echo ${{ runner }}
         
       - name: Print runner-os
-        run: echo ${{ runner.os }} && echo ${{ runner.label }}
+        run: echo ${{ runner.os }} && echo ${{ runner.labels }}
         
         
       - name: Install dependencies
