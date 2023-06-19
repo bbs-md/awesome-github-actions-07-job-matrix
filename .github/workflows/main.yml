@@ -3,7 +3,7 @@ name: job-matrix
 on:
   push:
     paths:
-      - './test/**.js'
+      - './tests/**.js'
   
 env:
   MY_RUNNERS: "ubuntu-18.04 ubuntu-22.04"
