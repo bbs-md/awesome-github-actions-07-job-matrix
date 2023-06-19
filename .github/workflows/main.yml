@@ -31,7 +31,7 @@ jobs:
         
       - name: Check IF MY_VAR
         if: ${{ contains(env.MY_RUNNERS, matrix.os) }}
-        run: echo "THIS TEST for RET - >>>> $MY_VAR"
+        run: echo "THIS TEST for RET -  >>>> $MY_VAR"
         
       - name: Check Filter
         if: ${{ contains(env.MY_RUNNERS, matrix.os) }}
