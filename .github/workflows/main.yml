@@ -18,7 +18,7 @@ jobs:
     env:
       MATRIX_OS: "${{ matrix.os }}"
       
-    if: ${{ contains('dwew', matrix.os) }}
+    if: ${{ contains('dwew', vars.JOB_NAME ) }}
     runs-on: [ self-hosted, Linux ]   
     steps:
       - uses: actions/checkout@v2
