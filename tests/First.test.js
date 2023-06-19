@@ -1,5 +1,5 @@
 describe("PostgreSqlContainer", () => {
   test('This is first test', () => {
-     console.log("Test Output 4")
+     console.log("Test Output 1")
  })
 });
