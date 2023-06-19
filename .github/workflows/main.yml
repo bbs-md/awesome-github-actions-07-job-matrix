@@ -18,7 +18,7 @@ jobs:
     env:
       MATRIX_OS: "${{ matrix.os }}"
       
-    if: contains(github.env.MY_RUNNERS, 'ubuntu-18.04')
+    if: contains("ubuntu-18.04 ubuntu-22.04", 'ubuntu-18.04')
     runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
     steps:
       - uses: actions/checkout@v2
