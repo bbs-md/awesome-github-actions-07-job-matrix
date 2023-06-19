@@ -19,7 +19,7 @@ jobs:
       MATRIX_OS: "${{ matrix.os }}"
       
     if: contains('ubuntu-18.04 ubuntu-22.04', github.env.MATRIX_OS)
-    runs-on: [ self-hosted, Linux, "${{ matrix.os }}" ]   
+    runs-on: [ self-hosted, Linux ]   
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js
