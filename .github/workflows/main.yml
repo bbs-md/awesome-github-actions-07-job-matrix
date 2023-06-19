@@ -35,7 +35,9 @@ jobs:
         run: cat /etc/os-release
         
       - name: Install dependencies
+        if: ${{ contains(env.MY_RUNNERS, matrix.os) }}
         run: npm ci
         
       - name: Run tests
+        if: ${{ contains(env.MY_RUNNERS, matrix.os) }}
         run: npm test
