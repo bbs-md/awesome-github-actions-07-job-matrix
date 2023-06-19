@@ -2,6 +2,8 @@ name: job-matrix
 
 on:
   push:
+    paths:
+      - './test/**.js'
   
 env:
   MY_RUNNERS: "ubuntu-18.04 ubuntu-22.04"
@@ -18,6 +20,13 @@ jobs:
 
     runs-on: [ self-hosted, Linux ]   
     steps:
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            src:
+              - 'src/**'
+              
       - uses: actions/checkout@v2
         if: ${{ contains(env.MY_RUNNERS, matrix.os) }}
       - name: Set up Node.js
