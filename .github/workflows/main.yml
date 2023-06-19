@@ -15,14 +15,13 @@ jobs:
         exclude:
         - os: ubuntu-18.04
           node: 12
-    env:
-      MATRIX_OS: "${{ matrix.os }}"
-      
-    if: ${{ contains('dwew', vars.JOB_NAME ) }}
+
     runs-on: [ self-hosted, Linux ]   
     steps:
       - uses: actions/checkout@v2
+        if: ${{ contains(env.MY_RUNNERS, matrix.os) }
       - name: Set up Node.js
+        if: ${{ contains(env.MY_RUNNERS, matrix.os) }
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
