@@ -1,6 +1,8 @@
 name: parallel-jobs
 on:
   push:
+    paths:
+      - '.github/workflows/05-parallel-jobs.yml'
 
 jobs:
   job-a:
