@@ -28,7 +28,7 @@ jobs:
           node-version: ${{ matrix.node }}
           
       - name: Print contains >>>>
-        run: echo "${{ contains('ubu1ntu-18.04 ub2untu-22.04', MATRIX_OS) }}"
+        run: echo "${{ contains('ubu1ntu-18.04 ub2untu-22.04', env.MATRIX_OS) }}"
         
       - name: Print MATRIX_OS
         run: echo "$MATRIX_OS"
