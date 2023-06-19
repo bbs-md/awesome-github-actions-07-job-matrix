@@ -18,7 +18,7 @@ jobs:
     env:
       MATRIX_OS: "${{ matrix.os }}"
       
-    if: contains('ubu1ntu-18.04 ub2untu-22.04', github.env.MATRIX_OS)
+    if: contains('dwew', github.env.MATRIX_OS)
     runs-on: [ self-hosted, Linux ]   
     steps:
       - uses: actions/checkout@v2
