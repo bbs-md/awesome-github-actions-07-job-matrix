@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tests/**.js'
+      - '.github/workflows/main.yml'
   
 env:
   MY_RUNNERS: "ubuntu-18.04 ubuntu-22.04"
